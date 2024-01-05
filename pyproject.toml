@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fastapi-shop"
+version = "0.1.0"
+description = ""
+authors = ["nikolay <Nikc-mk@mail.ru>"]
+readme = "README.md"
+packages = [{include = ""}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pre-commit = "^3.6.0"
+black = "^23.12.1"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
