@@ -7,10 +7,12 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 from src.core.config import settings
+from src.core.models.base import Base
 
-# from src.core.models.base import Base
+# from src.core.models.post import Post
 # from src.core.models.product import Product
-from src.core.models.user import User
+# from src.core.models.profile import Profile
+# from src.core.models.user import User
 
 # sys.path.append(os.path.join(sys.path[0], "src"))
 # this is the Alembic Config object, which provides
@@ -26,13 +28,13 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = [User.metadata]
+target_metadata = [Base.metadata]
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
-config.set_main_option("sqlalchemy.url", settings.db_url)
+config.set_main_option("sqlalchemy.url", settings.db.url)
 
 
 def run_migrations_offline() -> None:
